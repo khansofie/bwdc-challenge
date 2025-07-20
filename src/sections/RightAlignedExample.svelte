@@ -10,7 +10,7 @@
             type: "pie",
         },
         title: {
-            text: "An Example Pie Chart",
+            text: "PIEEEEEEEEE",
         },
         plotOptions: {
             pie: {
@@ -73,7 +73,7 @@
     <Scroller layout="right">
         {#snippet sticky()}
             <div class="chart">
-                <Chart {options} highcharts={Highcharts} />
+                <Chart {options} Highcharts={Highcharts} />
             </div>
             <p>
                 Here's an example chart using
@@ -140,6 +140,9 @@
 <style>
     .chart {
         width: 90%;
-        margin: 0px auto;
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
     }
 </style>

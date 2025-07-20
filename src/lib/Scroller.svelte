@@ -19,13 +19,14 @@
         background-color: #f7f5eb;
         padding: min(100vh, 30rem) 1rem;
         border-style: solid;
-        border-color: #4096fa;
+        border-color: #220d31;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
+        min-height: 100vh;
     }
-
+    /*Layout order*/
     .left .scrolly {
         order: 0;
     }
@@ -44,7 +45,7 @@
     .scrolly {
         display: flex;
         flex-direction: column;
-        flex: 1 1; /* Allows growing, shrinking */
+        flex: 1 1 50%; /* Allows growing, shrinking */
     }
 
     .sticky {
@@ -55,10 +56,19 @@
         align-items: center;
         justify-content: center;
         z-index: 0;
+
+        min-height: 70vh;
+        background-color: #ffb6c1;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .scrolly {
         z-index: 1;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        justify-content: flex-start;
     }
 
     @media (max-width: 768px) {
@@ -78,6 +88,8 @@
 
         .sticky {
             margin-bottom: 2rem;
+            min-height: auto;
+            background-color: #ffb6c1;
         }
     }
 </style>
