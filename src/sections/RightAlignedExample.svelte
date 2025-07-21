@@ -75,22 +75,30 @@
 
         {#snippet scrolly()}
             <ArticleText>
-                <strong>STEM degrees are a path to high-paying jobs and a financial stable life ahead. But the question is
-                who's actually getting those jobs, and are they working in their field?</strong
-                >
+                Education is one of the most powerful tools for social and economic mobility. 
+                But not all groups have equal access to higher education.
+                This graph shows how degree attainment varies across different racial and ethnic groups.
             </ArticleText>
 
             <ArticleText>
-                The graph shows the current employment rates for STEM vs non-STEM jobs
+                Understanding these gaps is crucial for policymakers, educators, and members of the community
+                who are aiming to close the education gaps and create equal opportunities for all.
+            </ArticleText>
+
+
+            <ArticleText>
+                Why do some racial and ethnic groups attan degrees at higher rates than others?
+                What factors might be driving these differences?
             </ArticleText>
 
             <ArticleText>
-                We have Nationwide American data on STEM vs. non-STEM Employment Rates 
-                Among 25-34 years old with a STEM Degree
+                Behind these numbers are millions of students striving to earn degrees and build futures.
+                Yet their chances are not always the same.
             </ArticleText>
 
             <ArticleText>
-                It consists of male and female data, along with the following ethnicities: Black, Asian, Hispanic, and White
+                As we explore this data, we'll also look at how these degree attainment rates influence employment
+                outcomes and econmic stability across communities.
             </ArticleText>
         {/snippet}
     </Scroller>
