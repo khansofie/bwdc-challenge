@@ -4,13 +4,20 @@
     import { Chart } from "@highcharts/svelte";
     import Scroller from "../lib/Scroller.svelte";
     import ArticleText from "../lib/ArticleText.svelte";
+</script>
+<!--<script>
+    import * as Highcharts from "highcharts";
+    import "highcharts/modules/exporting";
+    import { Chart } from "@highcharts/svelte";
+    import Scroller from "../lib/Scroller.svelte";
+    import ArticleText from "../lib/ArticleText.svelte";
 
     let options = {
         chart: {
-            type: "pie",
+            
         },
         title: {
-            text: "PIEEEEEEEEE",
+            
         },
         plotOptions: {
             pie: {
@@ -67,15 +74,15 @@
             },
         ],
     };
-</script>
+</script>-->
 
 <div>
     <Scroller layout="right">
-        {#snippet sticky()}
+        <!--{#snippet sticky()}
             <div class="chart">
                 <Chart {options} Highcharts={Highcharts} />
             </div>
-        {/snippet}
+        {/snippet}-->
 
         {#snippet scrolly()}
             <ArticleText>
@@ -101,11 +108,11 @@
 </div>
 
 <style>
-    .chart {
+   /* .chart {
         width: 90%;
         max-width: 600px;
         margin: 0 auto;
         display: block;
         text-align: center;
-    }
+    }*/
 </style>
