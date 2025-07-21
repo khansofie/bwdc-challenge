@@ -5,7 +5,7 @@
 <div class="title-card">
     <div class="content">
         <h1>{title}</h1>
-        <p>{subtitle}</p>
+        <p>{@html subtitle}</p>
     </div>
 </div>
 

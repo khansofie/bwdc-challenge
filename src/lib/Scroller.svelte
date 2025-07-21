@@ -17,7 +17,7 @@
 <style>
     .wrapper {
         background-color: #f7f5eb;
-        padding: min(100vh, 30rem) 1rem;
+        /*padding: min(100vh, 30rem) 1rem;*/
         border-style: solid;
         border-color: #220d31;
         display: flex;
@@ -25,6 +25,7 @@
         flex-wrap: wrap;
         align-items: flex-start;
         min-height: 100vh;
+        position: relative;
     }
     /*Layout order*/
     .left .scrolly {
@@ -43,32 +44,36 @@
 
     .sticky,
     .scrolly {
-        display: flex;
-        flex-direction: column;
+        /*display: flex;*/
+        /*flex-direction: column;*/
         flex: 1 1 50%; /* Allows growing, shrinking */
     }
 
     .sticky {
         position: sticky;
-        top: 50vh;
-        transform: translateY(-50%);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 0;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 0;
-
-        min-height: 70vh;
+        
         background-color: #ffb6c1;
+        overflow: hidden;
         padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12 px rgba(0,0,0,0.1);
     }
 
     .scrolly {
         z-index: 1;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        justify-content: flex-start;
+        /*padding-left: 1.5rem;
+        padding-right: 1.5rem;*/
+        padding: 2rem 1.5rem;
+        /*justify-content: flex-start;*/
+        flex: 1 1 50%;
     }
 
     @media (max-width: 768px) {
@@ -78,18 +83,31 @@
             width: 100vw;
         }
 
-        .sticky,
-        .scrolly {
-            flex: 1 1 auto;
-            min-width: 100%;
-            position: static; /* remove sticky on mobile */
-            transform: none;
-        }
+        /*.sticky,*/
+        /*.scrolly {*/
+            /*flex: 1 1 auto;*/
+            /*min-width: 100%;*/
+            /*position: static; remove sticky on mobile */
+            /*transform: none;/*
+        /*}*/
+
+        /*.sticky {*/
+            /*margin-bottom: 2rem;*/
+            /*min-height: auto;*/
+            /*background-color: #ffb6c1;*/
+        /*}*/
 
         .sticky {
-            margin-bottom: 2rem;
-            min-height: auto;
+            position: static;
+            width: 100%;
+            height: auto;
             background-color: #ffb6c1;
+            margin-bottom: 2rem;
+        }
+
+        .scrolly {
+            z-index: 1;
+            padding: 1rem;
         }
     }
 </style>
