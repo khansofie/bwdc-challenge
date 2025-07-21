@@ -74,12 +74,14 @@
 <div>
     <Scroller layout="center">
         {#snippet sticky()}
+        <div class="sticky-container">
             <div class="chart">
                 <Chart bind:chart {options} highcharts={Highcharts} />
             </div>
             <button on:click={toggleThirdSeries} class="toggle-button">
                 {thirdSeriesVisible ? "Remove Group 3" : "Add Group 3"}
             </button>
+            <div class="explanation">
             <div>
                 <p>
                     You can use Svelte to add and remove data from a Highcharts
@@ -97,6 +99,8 @@
                     >
                 </p>
             </div>
+            </div>
+        </div>
         {/snippet}
 
         {#snippet scrolly()}
