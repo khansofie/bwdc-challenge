@@ -12,11 +12,10 @@
     .article-text {
         margin: 50vh auto;
         width: 50%;
-        background-color: #5c0e5a;
-        color: #a33232;
-        border: solid #5c0e5a 3px;
-        border-radius: 20px;
+        background-color: rgb(145, 43, 142);
+        color: #ffffff;
+        border: solid rgb(145, 43, 142) 3px;
+        border-radius: 10px;
         padding: 20px;
-        box-shadow: 16px 16px #5c0e5a;
     }
 </style>

@@ -43,21 +43,21 @@
                 data: [
                     {
                         name: "Asian",
-                        y: 629,
+                        y: 404,
                     },
                     {
                         name: "Black",
                         sliced: true,
                         selected: true,
-                        y: 290,
+                        y: 186,
                     },
                     {
                         name: "White",
-                        y: 423,
+                        y: 272,
                     },
                     {
                         name: "Hispanic",
-                        y: 215,
+                        y: 138,
                     },
                 ],
             },
