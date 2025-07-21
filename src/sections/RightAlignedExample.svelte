@@ -75,63 +75,26 @@
             <div class="chart">
                 <Chart {options} Highcharts={Highcharts} />
             </div>
-            <p>
-                Here's an example chart using
-                <a href="https://www.highcharts.com/">Highcharts</a>!
-            </p>
-            <p>
-                📈 <strong>Highcharts</strong> is a super-flexible library for
-                creating all kinds of charts. See demos of different chart types
-                <a href="https://www.highcharts.com/demo">here</a>.
-            </p>
-            <p>
-                Since we're using Highcharts through Svelte, the syntax is a
-                little different from what you might see in the demos. But all
-                of Highcharts' functionality is available through the Highcharts
-                for Svelte package.
-            </p>
-            <p>
-                The configuration is done through the
-                <code>options</code> json object passed to the chart, which you'll
-                see in the source code for this template.
-            </p>
-            <p>
-                Use the
-                <a href="https://api.highcharts.com/highcharts/"
-                    >API reference</a
-                >
-                to understand what each element in the <code>options</code> object
-                does.
-            </p>
         {/snippet}
 
         {#snippet scrolly()}
             <ArticleText>
-                <strong>Welcome to the KWK Data Scrollytelling Template!</strong
+                <strong>STEM degrees are a path to high-paying jobs and a financial stable life ahead. But the question is
+                who's actually getting those jobs, and are they working in their field?</strong
                 >
             </ArticleText>
 
             <ArticleText>
-                This is a <strong>basic example</strong> of how you might create
-                a scrollytelling piece using Svelte and Highcharts.
+                The graph shows the current employment rates for STEM vs non-STEM jobs
             </ArticleText>
 
             <ArticleText>
-                You can use this template as a <strong>starting point</strong>
-                for your project.
-                <br /><br />
-                Or, if you want to build something from scratch, you can use it as
-                a <strong>reference</strong> for specific functionality.
+                We have Nationwide American data on STEM vs. non-STEM Employment Rates 
+                Among 25-34 years old with a STEM Degree
             </ArticleText>
 
             <ArticleText>
-                This is <strong>just one way</strong> that scrollytelling can
-                look.
-                <br /><br />
-                <strong>
-                    If you use this template, be sure to modify it and make it
-                    your own!
-                </strong>
+                It consists of male and female data, along with the following ethnicities: Black, Asian, Hispanic, and White
             </ArticleText>
         {/snippet}
     </Scroller>
