@@ -101,14 +101,12 @@
 
         {#snippet scrolly()}
             <ArticleText>
-                You might notice that this basic template doesn't have certain
-                features that are common in scrollytelling.
+                STEM degrees are a path to high-paying jobs and a financial stable life ahead. But the question is
+                who's actually getting those jobs, and are they working in their field?
             </ArticleText>
 
             <ArticleText>
-                For example, you might want a component that doesn't feature a
-                sticky component at all. Or a component that is solely a sticky
-                component.
+                The graph shows the current employment rates for STEM vs non-STEM jobs
             </ArticleText>
 
             <ArticleText>

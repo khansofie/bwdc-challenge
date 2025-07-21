@@ -34,7 +34,7 @@
     h1 {
         font-size: 3rem;
         margin: 0;
-        color: #e3ff00;
+        color: #ffffff;
         text-shadow: 1px 1px 0 #220d31;
     }
 
