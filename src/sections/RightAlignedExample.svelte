@@ -10,7 +10,7 @@
             type: "pie",
         },
         title: {
-            text: "PIEEEEEEEEE",
+            text: "Degree Attainment by Race or Ethnicity ",
         },
         plotOptions: {
             pie: {
@@ -39,29 +39,25 @@
         },
         series: [
             {
-                name: "Group",
+                name: "Race/Ethnicity",
                 data: [
                     {
-                        name: "Group 1",
-                        y: 151,
+                        name: "Asian",
+                        y: 629,
                     },
                     {
-                        name: "Group 2",
+                        name: "Black",
                         sliced: true,
                         selected: true,
-                        y: 180,
+                        y: 290,
                     },
                     {
-                        name: "Group 3",
-                        y: 32,
+                        name: "White",
+                        y: 423,
                     },
                     {
-                        name: "Group 4",
-                        y: 103,
-                    },
-                    {
-                        name: "Group 5",
-                        y: 77,
+                        name: "Hispanic",
+                        y: 215,
                     },
                 ],
             },
