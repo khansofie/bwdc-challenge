@@ -16,7 +16,7 @@
 
 <style>
     .wrapper {
-        background-color: #f7f5eb;
+        background-color: #220d31;
         /*padding: min(100vh, 30rem) 1rem;*/
         border-style: solid;
         border-color: #220d31;
@@ -61,7 +61,7 @@
         align-items: center;
         justify-content: center;
         
-        background-color: #ffb6c1;
+        background-color: #220d31;
         overflow: hidden;
         padding: 1.5rem;
         box-shadow: 0 4px 12 px rgba(0,0,0,0.1);
@@ -101,7 +101,7 @@
             position: static;
             width: 100%;
             height: auto;
-            background-color: #ffb6c1;
+            background-color: #220d31;
             margin-bottom: 2rem;
         }
 
