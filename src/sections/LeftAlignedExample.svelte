@@ -72,7 +72,7 @@
 </script>
 
 <div>
-    <Scroller layout="left">
+    <Scroller layout="center">
         {#snippet sticky()}
             <div class="chart">
                 <Chart bind:chart {options} highcharts={Highcharts} />
@@ -126,13 +126,14 @@
 
 <style>
     .chart {
-        width: 90%;
-        margin: 0px auto;
+        width: 600px;
+        max-width: 90vw;
+        margin: 0 auto;
     }
 
     .toggle-button {
-        margin: 20px;
-        padding: 20px;
+        margin: 20px auto;
+        padding: 15px 30px;
         color: #007052;
         background-color: #0bd956;
         border: solid 2px #007052;
@@ -146,5 +147,19 @@
     .toggle-button:active {
         transform: translateY(2px);
         box-shadow: 0 2px 0 #007052;
+    }
+
+    .sticky-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .explanation {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
     }
 </style>
