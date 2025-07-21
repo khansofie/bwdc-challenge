@@ -7,34 +7,36 @@
 
     const series = [
         {
-            name: "Group 1",
+            name: "Asian",
             data: [
-                [1990, 3],
-                [2000, 4],
-                [2010, 1],
-                [2020, 1],
+                [2016, 8.4],
+                [2023, 6.9],
             ],
             color: "#8427c9",
         },
         {
-            name: "Group 2",
+            name: "Black",
             data: [
-                [1990, 2],
-                [2000, 5],
-                [2010, -2],
-                [2020, 2],
+                [2016, 7.7],
+                [2023, 6.1],
             ],
             color: "#ff99fc",
         },
         {
-            name: "Group 3",
+            name: "Hispanic",
             data: [
-                [1990, 4],
-                [2000, 3],
-                [2010, 0],
-                [2020, 3],
+                [2016, 6.5],
+                [2023, 5.9],
             ],
             color: "#4096fa",
+        },
+        {
+            name: "White",
+            data: [
+                [2016, 5.7],
+                [2023, 4.8],
+            ],
+            color: "#4099fa",
         },
     ];
 
@@ -50,22 +52,23 @@
             borderRadius: 20,
         },
         title: {
-            text: "Another Example Chart",
+            text: "STEM vs. non-STEM Employment Rates Among 25-34 Year Olds with a STEM Degree",
         },
         subtitle: {
-            text: "With a subtitle! And styling!",
+            text: "Nationwide",
         },
         series: [series[0], series[1]],
     };
 
     function toggleThirdSeries() {
-        const existingSeries = chart.series.find((s) => s.name === "Group 3");
+        const seriesName = "Hispanic";
+        const existingSeries = chart.series.find((s) => s.name === seriesName);
 
         if (existingSeries) {
             existingSeries.remove();
             thirdSeriesVisible = false;
         } else {
-            chart.addSeries(series[2]);
+            chart.addSeries(series.find(s => s.name === seriesName));
             thirdSeriesVisible = true;
         }
     }
