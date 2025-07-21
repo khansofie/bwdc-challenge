@@ -36,12 +36,15 @@
                 [2016, 5.7],
                 [2023, 4.8],
             ],
-            color: "#4099fa",
+            color: "#40a0fa",
         },
     ];
 
     let chart;
-    let thirdSeriesVisible = false;
+
+    // Track visibility of these two groups
+    let hispanicVisible = false;
+    let whiteVisible = false;
 
     let options = {
         chart: {
@@ -57,19 +60,22 @@
         subtitle: {
             text: "Nationwide",
         },
+        // Start with only Asian and Black
         series: [series[0], series[1]],
     };
 
-    function toggleThirdSeries() {
-        const seriesName = "Hispanic";
+    function toggleSeries(seriesName) {
         const existingSeries = chart.series.find((s) => s.name === seriesName);
 
         if (existingSeries) {
             existingSeries.remove();
-            thirdSeriesVisible = false;
+            if (seriesName === "Hispanic") hispanicVisible = false;
+            if (seriesName === "White") whiteVisible = false;
         } else {
-            chart.addSeries(series.find(s => s.name === seriesName));
-            thirdSeriesVisible = true;
+            const newSeries = series.find((s) => s.name === seriesName);
+            chart.addSeries(newSeries);
+            if (seriesName === "Hispanic") hispanicVisible = true;
+            if (seriesName === "White") whiteVisible = true;
         }
     }
 </script>
@@ -81,50 +87,47 @@
             <div class="chart">
                 <Chart bind:chart {options} highcharts={Highcharts} />
             </div>
-            <button on:click={toggleThirdSeries} class="toggle-button">
-                {thirdSeriesVisible ? "Remove Group 3" : "Add Group 3"}
-            </button>
-            <div class="explanation">
-            <div>
-                <p>
-                    You can use Svelte to add and remove data from a Highcharts
-                    chart.
-                </p>
-                <p>
-                    When you click the button above, a third group is toggled in
-                    the chart. Check out the source code to see how it's done.
-                </p>
-                <p>
-                    <strong
-                        >🤔 How might you use other HTML elements, like
-                        checkboxes or radio buttons, in a similar way to filter
-                        data?</strong
-                    >
-                </p>
+            <div class="buttons">
+                <button on:click={() => toggleSeries("Hispanic")} class="toggle-button">
+                    {hispanicVisible ? "Remove Hispanic" : "Add Hispanic"}
+                </button>
+                <button on:click={() => toggleSeries("White")} class="toggle-button">
+                    {whiteVisible ? "Remove White" : "Add White"}
+                </button>
             </div>
+
+            <div class="explanation">
+                <p>
+                    You can use Svelte to add and remove data from a Highcharts chart.
+                </p>
+                <p>
+                    Click the buttons above to toggle the "Hispanic" and "White" groups.
+                </p>
+                <p>
+                    <strong>
+                        🤔 How might you use other HTML elements, like checkboxes or radio buttons, in a similar way to filter data?
+                    </strong>
+                </p>
             </div>
         </div>
         {/snippet}
 
         {#snippet scrolly()}
             <ArticleText>
-                STEM degrees are a path to high-paying jobs and a financial stable life ahead. But the question is
-                who's actually getting those jobs, and are they working in their field?
+                STEM degrees are a path to high-paying jobs and a financially stable life ahead. But the question is who's actually getting those jobs, and are they working in their field?
             </ArticleText>
 
             <ArticleText>
-                The graph shows the current employment rates for STEM vs non-STEM jobs
+                The graph shows the current employment rates for STEM vs non-STEM jobs.
             </ArticleText>
 
             <ArticleText>
-                You might also want to add more interactivity or gamify parts of
-                your scrollytelling piece.
+                You might also want to add more interactivity or gamify parts of your scrollytelling piece.
             </ArticleText>
 
             <ArticleText>
                 <strong>
-                    It's up to you to research how to create the effects and
-                    functionality that you envision!
+                    It's up to you to research how to create the effects and functionality that you envision!
                 </strong>
             </ArticleText>
         {/snippet}
@@ -138,8 +141,14 @@
         margin: 0 auto;
     }
 
+    .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
     .toggle-button {
-        margin: 20px auto;
         padding: 15px 30px;
         color: #007052;
         background-color: #0bd956;
