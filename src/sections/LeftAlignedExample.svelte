@@ -141,7 +141,7 @@
 
 <style>
   .chart {
-    padding-top: 40 px;
+    padding-top: 40px;
     width: 600px;
     max-width: 90vw;
     margin: 0 auto;
@@ -178,9 +178,10 @@
     overflow: visible;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 20px;
   }
 
   .explanation {
