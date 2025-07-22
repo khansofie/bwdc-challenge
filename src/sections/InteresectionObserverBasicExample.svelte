@@ -1,96 +1,123 @@
 <script>
+    import * as Highcharts from "highcharts";
+    import "highcharts/modules/exporting";
+    import { Chart } from "@highcharts/svelte";
     import Scroller from "../lib/Scroller.svelte";
-    import ObservedArticleText from "../lib/ObservedArticleText.svelte";
+    import ArticleText from "../lib/ArticleText.svelte";
 
-    // this `options` object below is passed into the <ObservedArticleText>
-    // component, and from there it gets passed to the IntersectionObserver object w
-    // when it's created.
-    // the thresholds to fire the callback are 85% and 95%. in the callback function,
-    // we check whether the visible area is >= 90%. so, triggering the callback at
-    // 85% and 95% ensures we trigger the correct change in background color
-    // whether the element is being scrolled into the viewport or out of the viewport.
-    const options = {
-        threshold: [0.85, 0.95],
-    };
-
-    const callback = (entries, observer) => {
-        entries.forEach((entry) => {
-            const elem = entry.target;
-
-            if (entry.intersectionRatio >= 0.9) {
-                // "active" state
-                elem.style.backgroundColor = "#e3ff00";
-            } else if (entry.intersectionRatio < 0.9) {
-                // "inactive" state
-                elem.style.backgroundColor = "#888888";
-            }
-        });
+    let options = {
+        chart: {
+            type: "pie",
+        },
+        title: {
+            text: "Degree Attainment by Race or Ethnicity ",
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                dataLabels: [
+                    {
+                        enabled: true,
+                        distance: 20,
+                    },
+                    {
+                        enabled: true,
+                        distance: -40,
+                        format: "{point.percentage:.1f}%",
+                        style: {
+                            fontSize: "1.2em",
+                            textOutline: "none",
+                        },
+                        filter: {
+                            operator: ">",
+                            property: "percentage",
+                            value: 10,
+                        },
+                    },
+                ],
+            },
+        },
+        series: [
+            {
+                name: "Race/Ethnicity",
+                data: [
+                    { name: "Asian", y: 404 },
+                    { name: "Black", y: 186, sliced: true, selected: true },
+                    { name: "White", y: 272 },
+                    { name: "Hispanic", y: 138 },
+                ],
+            },
+        ],
     };
 </script>
 
 <div>
-    <Scroller layout="left">
+    <Scroller layout="right">
         {#snippet sticky()}
-            <div>
-                <p>
-                    This section shows how to use the
-                    <code>{"<ObservedArticleText>"} component.</code>
-                </p>
-                <p>
-                    The <code>{"<ObservedArticleText>"}</code>
-                    component is very similar to the
-                    <code>{"<ArticleText>"}</code>
-                    component, but it also creates and uses an
-                    <a
-                        href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
-                    >
-                        Intersection Observer
-                    </a>.
-                </p>
-                <p>
-                    That Intersection Observer object "watches" the element. We
-                    can use it to answer the question:
-                    <br /><br />
-                    <strong
-                        >"Is this element currently visible in the browser
-                        window?"</strong
-                    >
-                    <br /><br />
-                    <strong> How does it work?</strong> When some specified percentage of
-                    the element crosses into or out of the viewport of this
-                    browser window, a
-                    <strong> callback function </strong> is called.
-                </p>
-                <p>
-                    A <strong>callback function</strong> is a function, which we
-                    define, that will get called when a specific event happens.
-                </p>
-                <p>
-                    We can define any behavior we want to in that callback
-                    function. In this case, we turn the background of the box a
-                    different color depending on whether the element is more or
-                    less than 90% visible.
-                </p>
-                <p>
-                    📝 <strong>Try it yourself!:</strong> Make a change so that
-                    the article text box changes color when <strong>50%</strong>
-                    of it is visible.
-                </p>
+            <div class="chart">
+                <Chart {options} Highcharts={Highcharts} />
             </div>
         {/snippet}
 
         {#snippet scrolly()}
-            <ObservedArticleText {callback} {options}>
-                <code>{"<ObservedArticleText>"}</code> example #1
-            </ObservedArticleText>
+            <ArticleText>
+                Education is one of the most powerful tools for social and economic mobility. 
+                But not all groups have equal access to higher education.
+                This graph shows how degree attainment varies across different racial and ethnic groups.
+            </ArticleText>
 
-            <ObservedArticleText {callback} {options}>
-                <code>{"<ObservedArticleText>"}</code> example #2
-            </ObservedArticleText>
+            <ArticleText>
+                Understanding these gaps is crucial for policymakers, educators, and members of the community
+                who are aiming to close the education gaps and create equal opportunities for all.
+            </ArticleText>
 
-            <ObservedArticleText {callback} {options}>
-                <code>{"<ObservedArticleText>"}</code> example #3
-            </ObservedArticleText>
+            <ArticleText>
+                Why do some racial and ethnic groups attain degrees at higher rates than others?
+                What factors might be driving these differences?
+            </ArticleText>
+
+            <ArticleText>
+                Behind these numbers are millions of students striving to earn degrees and build futures.
+                Yet their chances are not always the same.
+            </ArticleText>
+
+            <ArticleText>
+                As we explore this data, we've seen how degree attainment influences employment outcomes,
+                and how even internet access plays a surprising role in shaping those opportunities.
+            </ArticleText>
+
+            <ArticleText>
+                Across all four graphs, one pattern stands out: racial disparities in education and employment
+                are deeply intertwined with access to technology and infrastructure.
+            </ArticleText>
+
+            <ArticleText>
+                When communities lack fast, reliable internet, they face barriers to online learning, job searching,
+                telehealth, and more—limiting social mobility in the digital age.
+            </ArticleText>
+
+            <ArticleText>
+                <strong>What's next?</strong> We can act. Investing in broadband infrastructure, expanding equitable STEM
+                opportunities, and addressing systemic disparities are crucial steps.
+            </ArticleText>
+
+            <ArticleText>
+                Change begins with awareness—but it grows with action.
+            </ArticleText>
         {/snippet}
     </Scroller>
 </div>
+
+<style>
+    .chart {
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .article-text {
+        color: white;
+    }
+</style>
