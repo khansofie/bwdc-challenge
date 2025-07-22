@@ -20,7 +20,7 @@
         [2016, 7.7],
         [2023, 6.1],
       ],
-      color: "#e3ff00",
+      color: "#000080",
     },
     {
       name: "Hispanic",
@@ -55,6 +55,7 @@
       borderColor: "#d0ddda",
       borderWidth: 5,
       borderRadius: 20,
+      marginTop: 80,
     },
     title: {
       text: "STEM vs. non-STEM Employment Rates Among 25-34 Year Olds with a STEM Degree",
@@ -174,6 +175,7 @@
   }
 
   .sticky-container {
+    overflow: visible;
     display: flex;
     flex-direction: column;
     justify-content: center;
