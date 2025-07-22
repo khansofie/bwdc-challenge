@@ -41,13 +41,11 @@
   ];
 
   let chart;
-
-  // Track visibility for each group
   let visible = {
     Asian: true,
     Black: true,
-    Hispanic: false,
-    White: false,
+    Hispanic: true,
+    White: true,
   };
 
   let options = {
@@ -64,24 +62,17 @@
     subtitle: {
       text: "Nationwide (in percentage %)",
     },
-    // Initially only Asian and Black visible
-    series: [series.find(s => s.name === "Asian"), series.find(s => s.name === "Black")],
+    series: series.filter(s => visible[s.name]),
   };
 
-  function toggleSeries(seriesName) {
-    if (!chart) return;
+  function toggleSeries(name) {
+    visible[name] = !visible[name];
 
-    const existingSeries = chart.series.find(s => s.name === seriesName);
-
-    if (existingSeries) {
-      existingSeries.remove();
-      visible[seriesName] = false;
+    if (visible[name]) {
+      chart.addSeries(series.find(s => s.name === name));
     } else {
-      const newSeries = series.find(s => s.name === seriesName);
-      if (newSeries) {
-        chart.addSeries(newSeries);
-        visible[seriesName] = true;
-      }
+      const existingSeries = chart.series.find(s => s.name === name);
+      if (existingSeries) existingSeries.remove();
     }
   }
 </script>
@@ -89,32 +80,36 @@
 <div>
   <Scroller layout="center">
     {#snippet sticky()}
-      <div class="sticky-container">
-        <div class="chart">
-          <Chart bind:chart {options} Highcharts={Highcharts} />
-        </div>
-
-        <div class="buttons">
-          {#each Object.keys(visible) as group}
-            <button class="toggle-button" on:click={() => toggleSeries(group)}>
-              {visible[group] ? `Remove ${group}` : `Add ${group}`}
-            </button>
-          {/each}
-        </div>
-
-        <div class="explanation">
-          <p>You can use Svelte to add and remove data from a Highcharts chart.</p>
-          <p>Click the buttons above to toggle each racial/ethnic group.</p>
-          <p>
-            <strong>🤔 How might you use other HTML elements, like checkboxes or radio buttons, in a similar way to filter data?</strong>
-          </p>
-        </div>
+    <div class="sticky-container">
+      <div class="chart">
+        <Chart bind:chart {options} highcharts={Highcharts} />
       </div>
+
+      <div class="buttons">
+        {#each Object.keys(visible) as group}
+          <button class="toggle-button" on:click={() => toggleSeries(group)}>
+            {visible[group] ? `Remove ${group}` : `Add ${group}`}
+          </button>
+        {/each}
+      </div>
+
+      <div class="explanation">
+        <p>You can use Svelte to add and remove data from a Highcharts chart.</p>
+        <p>
+          When you click the buttons above, you toggle each group in the chart. Check out the source code to see how it's done.
+        </p>
+        <p>
+          <strong>
+            🤔 How might you use other HTML elements, like checkboxes or radio buttons, in a similar way to filter data?
+          </strong>
+        </p>
+      </div>
+    </div>
     {/snippet}
 
     {#snippet scrolly()}
       <ArticleText>
-        STEM degrees are a path to high-paying jobs and a financially stable life ahead. But the question is who's actually getting those jobs, and are they working in their field?
+        STEM degrees are a path to high-paying jobs and a financial stable life ahead. But the question is who's actually getting those jobs, and are they working in their field?
       </ArticleText>
 
       <ArticleText>
@@ -143,12 +138,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    margin: 20px 0;
+    gap: 12px;
+    margin: 20px auto;
+    max-width: 600px;
   }
 
   .toggle-button {
-    padding: 15px 25px;
+    padding: 15px 30px;
     color: #007052;
     background-color: #0bd956;
     border: solid 2px #007052;
@@ -176,5 +172,7 @@
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
+    color: white;
+    font-family: serif;
   }
 </style>
