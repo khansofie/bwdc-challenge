@@ -20,7 +20,7 @@
         [2016, 7.7],
         [2023, 6.1],
       ],
-      color: "#ff99fc",
+      color: "#e3ff00",
     },
     {
       name: "Hispanic",
@@ -51,8 +51,8 @@
   let options = {
     chart: {
       type: "spline",
-      backgroundColor: "#e3ff00",
-      borderColor: "#007052",
+      backgroundColor: "#ff99fc",
+      borderColor: "#d0ddda",
       borderWidth: 5,
       borderRadius: 20,
     },
@@ -140,9 +140,11 @@
 
 <style>
   .chart {
+    padding-top: 40 px;
     width: 600px;
     max-width: 90vw;
     margin: 0 auto;
+    padding-bottom: 40px;
   }
 
   .buttons {
