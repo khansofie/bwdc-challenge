@@ -54,15 +54,3 @@
     {/snippet}
   </Scroller>
 </div>
-
-<style>
-  .article-text {
-    color: white;
-    font-size: 1.1em;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-    transition: background-color 0.4s ease;
-  }
-</style>
