@@ -36,7 +36,7 @@
         [2016, 5.7],
         [2023, 4.8],
       ],
-      color: "#4099fa",
+      color: "#ffa500",
     },
   ];
 
@@ -94,14 +94,19 @@
       </div>
 
       <div class="explanation">
-        <p>You can use Svelte to add and remove data from a Highcharts chart.</p>
+        <p>This is the graph </p>
         <p>
-          When you click the buttons above, you toggle each group in the chart. Check out the source code to see how it's done.
+          This graph compares employment rates among 25-34 year olds with a STEM degree across different racial and ethnic groups in the United States.
         </p>
         <p>
-          <strong>
-            🤔 How might you use other HTML elements, like checkboxes or radio buttons, in a similar way to filter data?
-          </strong>
+          Notice that Asian and Black groups have a higher rate of employment in STEM fields compared to Hispanic and White groups, 
+          but all groups see a decline from 2016 to 2023.
+        </p>
+        <p>
+          These trends highlight ongoing disparities and challenges in the STEM job market, highlighting the need for targeted support and opportunities.
+        </p>
+        <p>
+          As you scroll, we'll explore how access to resources like reliable internet connection can influence these employment outcomes.
         </p>
       </div>
     </div>
@@ -109,19 +114,29 @@
 
     {#snippet scrolly()}
       <ArticleText>
-        STEM degrees are a path to high-paying jobs and a financial stable life ahead. But the question is who's actually getting those jobs, and are they working in their field?
+        STEM degrees often open doors to higher-paying and in-demand jobs. But how do employment rates compare across different racial and ethnic groups?
       </ArticleText>
 
       <ArticleText>
-        The graph shows the current employment rates for STEM vs non-STEM jobs.
+        This graph tracks employment rates in STEM vs. non-STEM jobs among 25 to 34-year-olds 
+        with STEM degrees, comparing four major racial and ethnic groups from 2016 to 2023.
       </ArticleText>
 
       <ArticleText>
-        You might also want to add more interactivity or gamify parts of your scrollytelling piece.
+        While employment rates have generally declined across all four of these groups, Asian graduates maintain the 
+        highest employment rate, followed by Black, Hispanic, and White graduates.
       </ArticleText>
 
       <ArticleText>
-        <strong>It's up to you to research how to create the effects and functionality that you envision!</strong>
+        The decline for each group signals potential challenges in the job market, but the gaps between groups highlight persistent disparities.
+      </ArticleText>
+
+      <ArticleText>
+        What factors might contribute to these gaps? Access to networks, discrimination, geographic distribution, or differences in STEM fields pursued.
+      </ArticleText>
+
+      <ArticleText>
+        Understanding these trends help us explore what can be done to improve employment outcomes for all STEM graduates. Let's look at this more critically.
       </ArticleText>
     {/snippet}
   </Scroller>
@@ -145,19 +160,19 @@
 
   .toggle-button {
     padding: 15px 30px;
-    color: #007052;
-    background-color: #0bd956;
-    border: solid 2px #007052;
+    color: #ffffff;
+    background-color: #ff99fc;
+    border: solid 2px #d0ddda;
     border-radius: 16px;
     font-size: large;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 0 #007052;
+    box-shadow: 0 4px 0 #d0ddda;
   }
 
   .toggle-button:active {
     transform: translateY(2px);
-    box-shadow: 0 2px 0 #007052;
+    box-shadow: 0 2px 0 #d0ddda;
   }
 
   .sticky-container {
