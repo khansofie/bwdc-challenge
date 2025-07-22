@@ -94,16 +94,12 @@
       </div>
 
       <div class="explanation">
-        <p>This is the graph </p>
         <p>
           This graph compares employment rates among 25-34 year olds with a STEM degree across different racial and ethnic groups in the United States.
         </p>
         <p>
           Notice that Asian and Black groups have a higher rate of employment in STEM fields compared to Hispanic and White groups, 
-          but all groups see a decline from 2016 to 2023.
-        </p>
-        <p>
-          These trends highlight ongoing disparities and challenges in the STEM job market, highlighting the need for targeted support and opportunities.
+          but all groups see a decline from 2016 to 2023. These trends highlight ongoing disparities and challenges in the STEM job market, highlighting the need for targeted support and opportunities.
         </p>
         <p>
           As you scroll, we'll explore how access to resources like reliable internet connection can influence these employment outcomes.
@@ -188,6 +184,6 @@
     margin: 20px auto;
     text-align: center;
     color: white;
-    font-family: serif;
+   /*font-family: serif;*/
   }
 </style>
