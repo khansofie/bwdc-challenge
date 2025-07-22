@@ -79,7 +79,7 @@
           While the disparities may seem minor in percentages, they reflect broader systemic inequalities in housing, income, and infrastructure investment that shape digital inclusion.
         </p>
         <p>
-          Let’s explore how these digital access gaps may relate to opportunity in education and employment.
+          Let's explore how these digital access gaps may relate to opportunity in education and employment.
         </p>
       </div>
     </div>
@@ -87,7 +87,7 @@
 
     {#snippet scrolly()}
       <ArticleText>
-        Access to high-speed internet isn’t a luxury—it’s a necessity for education, job applications, remote work, and staying connected.
+        Access to high-speed internet isn't a luxury—it's a necessity for education, job applications, remote work, and staying connected.
       </ArticleText>
 
       <ArticleText>
