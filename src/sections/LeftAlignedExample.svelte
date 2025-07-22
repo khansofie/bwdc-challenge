@@ -62,7 +62,7 @@
       text: "STEM vs. non-STEM Employment Rates Among 25-34 Year Olds with a STEM Degree",
     },
     subtitle: {
-      text: "Nationwide",
+      text: "Nationwide (in percentage %)",
     },
     // Initially only Asian and Black visible
     series: [series.find(s => s.name === "Asian"), series.find(s => s.name === "Black")],
