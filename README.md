@@ -1,22 +1,8 @@
-# KWK Scrollytelling template
+I reused the template that was provided through Jasmine's repository. 
+I used 4 graphs from https://blackwealthdata.org/
+1. Degree Attainment by Race or Ethnicity
+2. STEM vs. non-STEM Employment Rates Among 25-34 Year Olds with a STEM Degree
+3. Percent Broadband Internet Subscription by Households, by Race/Ethnicity
+4. High-Speed Broadband Internet Usage (25MBPS or higher)
 
-This template is a starting point / example of how to create a scrollytelling piece using Svelte and Highcharts! 
-
-## Demo
-See a live demo of the page [here](https://jasminesamra.github.io/kwk-scrollytelling-template/)!
-
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
-
-## How to clone the repo
-On this repo's homepage in GitHub, click the `Use this template` button. Select the option to create a new repository. This will create a new repo under your GitHub account.
-
-Navigate to your new copy of this template in your GitHub profile. 
-
-Clone your new repo locally and `cd` into it. 
-
-Run `npm install` and then `npm run dev` to spin up the project locally. Then, start making changes! You can use this repo as a starting point for your own final project or simply as an example. 
-
-## Credit
-Repo created using vite (`npm create vite@6`)
+I was also inspired by this story by The Pudding: https://pudding.cool/2024/03/teenagers/
